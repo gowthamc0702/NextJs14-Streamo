@@ -18,3 +18,21 @@ export const getSelf = async () => {
 
   return user;
 };
+
+export const getSelfByUsername = async (username: string) => {
+  const self = await currentUser();
+
+  if (!self || !self.username) {
+    throw new Error("Unauthorized access");
+  }
+
+  const user = await db.user.findUnique({
+    where: { username },
+  });
+
+  if (!user || self.username !== user.username) {
+    throw new Error("Unauthorized");
+  }
+
+  return user;
+};
