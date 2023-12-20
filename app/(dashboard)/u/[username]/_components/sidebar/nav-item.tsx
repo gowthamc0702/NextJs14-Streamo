@@ -19,7 +19,7 @@ export const NavItem = ({
   label,
   href,
   isActive,
-}): NavItemProps => {
+}: NavItemProps) => {
   const { collapsed } = useCreatorSidebar((state) => state);
 
   return (
