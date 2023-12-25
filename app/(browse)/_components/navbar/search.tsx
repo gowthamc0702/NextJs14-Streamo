@@ -52,7 +52,7 @@ const Search = () => {
       )}
       <Button
         type="submit"
-        size="sm"
+        size="default"
         variant="secondary"
         className="rounded-l-none"
       >
